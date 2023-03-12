@@ -1,0 +1,18 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 32
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 010532f7ad1bebc46b488906199a5215, type: 3}
+  m_Name: Input Action Event Test
+  m_EditorClassIdentifier: 
+  _input: {fileID: 1120369429361536294, guid: ca9f5fa95ffab41fb9a615ab714db018, type: 3}
+  _actions:
+    m_PersistentCalls:
+      m_Calls: []

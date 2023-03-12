@@ -1,0 +1,21 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f55e04021587be544a55ee3418a48bab, type: 3}
+  m_Name: Level 1 Goblin
+  m_EditorClassIdentifier: 
+  title: {fileID: 11400000, guid: 57bc4e871f7b2ac47a135e7e8dc0a043, type: 2}
+  description: {fileID: 11400000, guid: ebf9a3a4e01bbd14183f0d7a840a7457, type: 2}
+  icon: {fileID: 11400000, guid: 7982135152826cb4e956954b16c8ada0, type: 2}
+  background: {fileID: 11400000, guid: c049f6955c0180a4d8a84a63743577a1, type: 2}
+  cost: 0
+  attack: 0
+  health: 1
