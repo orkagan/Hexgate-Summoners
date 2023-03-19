@@ -7,25 +7,35 @@ using UnityEngine.EventSystems;
 public class CardBehaviour : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler, IPointerDownHandler, IPointerUpHandler
 {
     public bool hover;
-    public Vector3 bigScale = new Vector3(1.1f, 1.1f, 1.1f);
+    private Vector3 hoverOffset = new Vector3(0, 0.1f, 0);
+    private Vector3 originalPos;
+
+    private Collider hitbox;
+
+    private void Start()
+    {
+        hitbox = GetComponent<Collider>();
+    }
 
     public void OnPointerEnter(PointerEventData eventData)
     {
         hover = true;
-        this.transform.localScale = bigScale;
+        originalPos = this.transform.position;
+        this.transform.position += hoverOffset;
     }
 
     public void OnPointerExit(PointerEventData eventData)
     {
         hover = false;
-        this.transform.localScale = new Vector3(1, 1, 1);
+        this.transform.position = originalPos;
     }
 
     public void OnPointerDown(PointerEventData eventData)
     {
         SelectedCard.selectedObject = this.gameObject;
         SelectedCard.originalPos = this.transform.position;
-        setRaycastTargetRecursive(false); //disables raycast target for everything but tagged Zones
+        hitbox.enabled = false;
+        //setRaycastTargetRecursive(false); //disables raycast target for everything but tagged Zones
     }
     public void OnPointerUp(PointerEventData eventData)
     {
@@ -43,7 +53,8 @@ public class CardBehaviour : MonoBehaviour, IPointerEnterHandler, IPointerExitHa
             SelectedCard.selectedObject.gameObject.transform.SetParent(eventData.pointerCurrentRaycast.gameObject.transform);
         }
         SelectedCard.selectedObject = null;
-        setRaycastTargetRecursive(true);
+        hitbox.enabled = true;
+        //setRaycastTargetRecursive(true);
     }
 
     public void setRaycastTargetRecursive(bool state)
